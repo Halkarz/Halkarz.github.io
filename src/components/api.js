@@ -1,4 +1,5 @@
-import halkarz from './data';
+import { halkarz, taslakarzlar } from './data';
+
 
 export const getHalkarz = async () => {
   try {
@@ -20,5 +21,29 @@ export const getHalkarzById = (id) => {
     console.error('Hata:', error);
     return null;
   }
+};
+
+export const getTaslakarzlar = async () => {
+  try {
+    return taslakarzlar;
+  } catch (error) {
+    console.error('Hata:', error);
+    return [];
+  }
+};
+
+// ID'ye göre taslakarz getirme fonksiyonu
+export const getTaslakarzById = (id) => {
+  try {
+    const arz = taslakarzlar.find(item => item.id === parseInt(id));
+    if (!arz) {
+      throw new Error(`ID'si ${id} olan taslak arzı bulunamadı.`);
+    }
+    return arz; 
+  } catch (error) {
+    console.error('Hata:', error);
+    return null;
+  }
+
 };
 

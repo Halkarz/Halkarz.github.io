@@ -6,11 +6,13 @@ import { useNavigate } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import Button from 'react-bootstrap/Button';
 
 export default function ArzList() {
 
     const [halkarz, setHalkarz] = useState([]);
     const navigate = useNavigate();
+    const [visibleArzCount, setVisibleArzCount] = useState(7);
 
     useEffect(() => {
       const fetchHalkarz = async () => {
@@ -24,6 +26,10 @@ export default function ArzList() {
     const handleRowClick = (id) => {
         navigate(`/arz/${id}`);
       };
+
+      const handleLoadMore = () => {
+        setVisibleArzCount(prevCount => prevCount + 10); // Daha fazla yükle butonuna basıldığında 10 arz daha göster
+    };
   return (
     <div className='arzListContainer'>
        <Container>
@@ -47,24 +53,37 @@ export default function ArzList() {
       <thead>
         <tr>
               <th></th>
-              <th>Halka Arz İsmi</th>
-              <th>Halka Arz Açıklaması</th>
-              <th>Halka Arz Tarihi</th>
-              <th>Halka Arz Fiyatı/Aralığı</th>
+              <th>Bist Kodu</th>
+              <th>Halka Arz</th>
+              <th>Tarih Aralığı</th>
+              <th></th>
         </tr>
       </thead>
       <tbody>
-        {halkarz.map(arz => (
+        {halkarz.slice(0, visibleArzCount).map(arz => (
               <tr key={arz.id} onClick={() => handleRowClick(arz.id)}  style={{ cursor: 'pointer' }}>
-                <td><img src={arz.image} alt={arz.name} style={{ maxWidth: '50px' }} /></td>
-                <td>{arz.name}</td>
-                <td>{arz.description}</td>
-                <td>{arz.listingDate}</td>
-                <td>{arz.priceRange}</td>
+                <td><img src={arz.img_src} alt={arz.name} style={{ maxWidth: '50px' }} /></td>
+                <td>{arz.bist_code}</td>
+                <td>
+                    <div className="scroll-container">
+                      <span className="scroll-text">{arz.company_name}</span>
+                    </div>
+              </td>
+                <td>{arz.halka_arz_tarihi}</td>
+                {arz.blink ? (
+                        <td><div className="blink"></div></td>
+                    ) : (
+                        <td></td>
+                    )}
               </tr>
             ))}
       </tbody>
     </Table>
+        {halkarz.length > visibleArzCount && (
+                                <div className="text-center">
+                                    <Button onClick={handleLoadMore}>Daha Fazla Yükle</Button>
+                                </div>
+                            )}
         </Col>
         <Col>
         <div>
