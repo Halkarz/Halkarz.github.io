@@ -3,6 +3,9 @@ import { getHalkarz } from '../api';
 import Table from 'react-bootstrap/Table';
 import './ArzList.css';
 import { useNavigate } from 'react-router-dom';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 export default function ArzList() {
 
@@ -23,7 +26,24 @@ export default function ArzList() {
       };
   return (
     <div className='arzListContainer'>
-      <Table hover borderless>
+       <Container>
+      <Row>
+        <Col>
+            <div>
+          <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4847965526054512" crossorigin="anonymous"></script>
+          <ins className="adsbygoogle"
+              style={{display:'block'}}
+              data-ad-client="ca-pub-4847965526054512"
+              data-ad-slot="2762370418"
+              data-ad-format="auto"
+              data-full-width-responsive="true"></ins>
+          <script>
+              (adsbygoogle = window.adsbygoogle || []).push({});
+          </script>
+        </div>
+        </Col>
+        <Col xs={8}>
+        <Table hover borderless>
       <thead>
         <tr>
               <th></th>
@@ -45,6 +65,23 @@ export default function ArzList() {
             ))}
       </tbody>
     </Table>
+        </Col>
+        <Col>
+        <div>
+          <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4847965526054512" crossorigin="anonymous"></script>
+          <ins className="adsbygoogle"
+              style={{display:'block'}}
+              data-ad-client="ca-pub-4847965526054512"
+              data-ad-slot="2762370418"
+              data-ad-format="auto"
+              data-full-width-responsive="true"></ins>
+          <script>
+              (adsbygoogle = window.adsbygoogle || []).push({});
+          </script>
+        </div>
+        </Col>
+      </Row>
+    </Container>
     </div>
   )
 }
