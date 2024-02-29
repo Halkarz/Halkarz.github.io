@@ -1,0 +1,24 @@
+.arzListContainer{
+    margin-top: 100px;
+}
+
+.table-container {
+    margin: 0 auto;
+    max-width: 800px; 
+  }
+  
+  .table {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 800px; 
+  }
+  
+  .table thead th {
+    text-align: center;
+  }
+  
+  .table tbody td {
+    text-align: center;
+  }
+  
+  
