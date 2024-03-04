@@ -62,14 +62,14 @@ export default function ArzList() {
       <tbody>
         {halkarz.slice(0, visibleArzCount).map(arz => (
               <tr key={arz.id} onClick={() => handleRowClick(arz.id)}  style={{ cursor: 'pointer' }}>
-                <td><img src={arz.img_src} alt={arz.name} style={{ maxWidth: '50px' }} /></td>
-                <td>{arz.bist_code}</td>
-                <td>
+                <td className={arz.blinkHover ? 'blinkHover' : ''}><img src={arz.img_src} alt={arz.name} style={{ maxWidth: '50px' }} /></td>
+                <td className={arz.blinkHover ? 'blinkHover' : ''}>{arz.bist_code}</td>
+                <td className={arz.blinkHover ? 'blinkHover' : ''}>
                     <div className="scroll-container">
                       <span className="scroll-text">{arz.company_name}</span>
                     </div>
               </td>
-                <td>{arz.halka_arz_tarihi}</td>
+                <td className={arz.blinkHover ? 'blinkHover' : ''}>{arz.halka_arz_tarihi}</td>
                 {arz.blink ? (
                         <td><div className="blink"></div></td>
                     ) : (
@@ -80,8 +80,8 @@ export default function ArzList() {
       </tbody>
     </Table>
         {halkarz.length > visibleArzCount && (
-                                <div className="text-center">
-                                    <Button onClick={handleLoadMore}>Daha Fazla Yükle</Button>
+                                <div className="d-grid gap-2">
+                                    <Button onClick={handleLoadMore} size="sm">Daha Fazla Yükle</Button>
                                 </div>
                             )}
         </Col>
