@@ -1,9 +1,0 @@
-.footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    background-color: #f8f9fa; /* Örnek bir arka plan rengi */
-    padding: 10px 0; /* İsteğe bağlı: Footer içeriğiyle arasına boşluk bırakmak için */
-    text-align: center; /* İçeriği ortalamak için */
-  }
-  
