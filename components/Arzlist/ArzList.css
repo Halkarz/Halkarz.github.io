@@ -1,0 +1,101 @@
+.arzListContainer{
+    margin-top: 100px;
+}
+
+.table-container {
+    margin: 0 auto;
+    max-width: 800px; 
+  }
+  
+  .table {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 800px; 
+  }
+  
+  .table thead th {
+    text-align: center;
+    border-bottom: 2px solid #ddd;
+  }
+
+  .table tbody td {
+    text-align: center;
+  }
+ 
+.table tbody td {
+  padding: 15px; 
+}
+
+.scroll-container {
+  position: relative;
+  width: 100%; 
+  height: auto; 
+  overflow: hidden;
+}
+
+.scroll-text {
+  display: inline-block;
+  white-space: nowrap;
+  width: 200px;
+}
+
+.scroll-container:hover .scroll-text {
+  animation: scroll 25s linear infinite;
+}
+.text-center{
+  padding: 0 100px 0 100px;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(20%);
+  }
+  100% {
+    transform: translateX(-55%);
+  }
+}
+
+
+@keyframes blink {
+  0% {
+    background-color: green;
+  }
+  50% {
+    background-color: transparent;
+  }
+  100% {
+    background-color: green;
+  }
+}
+
+.blink {
+  margin-top: 10px;
+  width: 10px;
+  height: 10px;
+  background-color: green;
+  border-radius: 50%;
+  animation: blink 5s infinite;
+}
+.blinkHover {
+  background-color: rgb(73, 235, 84);
+  animation: blinkHoverAnimation 10s infinite;
+}
+
+@keyframes blinkHoverAnimation {
+  0% {
+    background-color: transparent;
+  }
+  50% {
+    background-color:rgb(181, 242, 185);
+  }
+  100% {
+    background-color: transparent;
+  }
+}
+
+
+
+
+
+
+  
